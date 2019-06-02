@@ -34,7 +34,7 @@ implements DataWriter
   public void init()
   throws IOException {
     super.init();
-    handlers.tag.writeTag("");
+    handlers.tag.writeTag(TAG_PREFIX);
     handlers.typeId.writeTag(TYPE_TAG_PREFIX);
     handlers.itemId.writeTag(ITEM_TAG_PREFIX);
     handlers.size.writeInt(types.count());
