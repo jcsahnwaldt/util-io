@@ -28,7 +28,7 @@ implements IdDataHandler<String>
   throws IOException {
     String itemId = in.readLine();
     if (itemId == null) throw new EOFException();
-    else if (itemId.length() != 0) return itemId;
+    else if (! itemId.isEmpty()) return itemId;
     else if (requireId) throw new IllegalArgumentException("null/empty id not allowed"); 
     else return null;
   }
