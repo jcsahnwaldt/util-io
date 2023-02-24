@@ -9,11 +9,11 @@ extends DelegatingIdHandler<String>
 implements Items<String>
 {
   private static final String HASH_PREFIX = "@";
-  
+
   private final MapMode mode;
   private final Map<Object, String> ids;
   private final Map<String, Object> objects = new HashMap<String, Object>();
-  
+
   public StringItems(IdHandler<String> handler, MapMode mode) {
     super(handler);
     this.mode = mode;
@@ -23,19 +23,19 @@ implements Items<String>
   @Override
   public void add(String id, Object item) {
     if (id == null || !isNew(id)) throw new IllegalArgumentException("expected new id, got ["+id+"]");
-    
+
     Class<?> type = item.getClass();
     String typeName =
     Map.class.isAssignableFrom(type) ? "Map" :
     List.class.isAssignableFrom(type) ? "List" :
     type.getSimpleName();
-    
+
     id = typeName + id;
-    
+
     if (objects.put(id, item) != null) throw new IllegalArgumentException("duplicate id ["+id+"]");
     if (ids != null) ids.put(item, id);
   }
-  
+
   @Override
   public Object item(String id) {
     return objects.get(id);

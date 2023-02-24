@@ -37,10 +37,10 @@ implements ItemHandler
   public boolean canHandle(Object item) {
     return item instanceof Map;
   }
-  
+
   @Override
   public Class<?> itemType() {
     return Map.class;
   }
-  
+
 }

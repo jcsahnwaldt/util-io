@@ -9,7 +9,7 @@ extends DelegatingIdHandler<Integer>
 implements Types<Integer, H>
 {
   private final List<H> list = new ArrayList<H>();
-  
+
   public IntTypes(IdHandler<Integer> handler) {
     super(handler);
   }
@@ -18,7 +18,7 @@ implements Types<Integer, H>
   public int count() {
     return list.size();
   }
-  
+
   @Override
   public void add(H handler) {
     list.add(handler);

@@ -23,10 +23,10 @@ extends PlistItemHandler
   public boolean canHandle(Object item) {
     return item == null;
   }
-  
+
   @Override
   public Class<?> itemType() {
     return null;
   }
-  
+
 }

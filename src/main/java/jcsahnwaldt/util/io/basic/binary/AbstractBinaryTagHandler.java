@@ -23,7 +23,7 @@ implements TagHandler
     super.setReader(in);
     intHandler.setReader(in);
   }
-  
+
   protected abstract int tag();
 
   @Override
@@ -31,7 +31,7 @@ implements TagHandler
   throws IOException {
     intHandler.writeInt(tag());
   }
-  
+
   @Override
   public void readTag(String prefix)
   throws IOException {

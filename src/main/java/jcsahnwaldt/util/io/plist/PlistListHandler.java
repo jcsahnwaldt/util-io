@@ -5,13 +5,13 @@ import java.util.List;
 
 public class PlistListHandler
 extends PlistItemHandler
-{  
+{
   @Override
   public void init()
   throws IOException {
     out.defClass(this, "NSArray");
   }
-  
+
   @Override
   public void writeItem(Object item)
   throws IOException {
@@ -33,10 +33,10 @@ extends PlistItemHandler
   public boolean canHandle(Object item) {
     return item instanceof List;
   }
-  
+
   @Override
   public Class<?> itemType() {
     return List.class;
   }
-  
+
 }

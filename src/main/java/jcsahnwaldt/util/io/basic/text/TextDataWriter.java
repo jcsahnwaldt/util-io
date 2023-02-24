@@ -11,13 +11,13 @@ extends BasicDataWriter
   public static TextDataWriter intIds(Writer out, MapMode mode) {
     return new TextDataWriter(out, TextHandlers.intIds(), mode);
   }
-  
+
   public static TextDataWriter stringIds(Writer out, MapMode mode) {
     return new TextDataWriter(out, TextHandlers.stringIds(), mode);
   }
-  
+
   /*package*/ final Writer out;
-  
+
   public TextDataWriter(Writer out, TextHandlers handlers, MapMode mode) {
     super(handlers, mode);
     this.out = out;
@@ -26,5 +26,5 @@ extends BasicDataWriter
     register(new TextFloatHandler());
     register(new TextStringHandler());
   }
-  
+
 }

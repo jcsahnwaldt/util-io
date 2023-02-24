@@ -10,7 +10,7 @@ implements Items<Integer>
 {
   private final List<Object> objects = new ArrayList<Object>();
   private final Map<Object, Integer> ids;
-  
+
   public IntItems(IdHandler<Integer> handler, MapMode mode) {
     super(handler);
     ids = mode.map();

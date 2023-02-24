@@ -13,7 +13,7 @@ extends AbstractBinaryIdHandler
     if (i < 0 || i > 255) throw new IllegalArgumentException("type id must be 0..255");
     out.write(i);
   }
-  
+
   @Override
   public Integer readId()
   throws IOException {
@@ -27,5 +27,5 @@ extends AbstractBinaryIdHandler
     // Binary Byte ID 1.2
     return 0xBB1D0102;
   }
-  
+
 }

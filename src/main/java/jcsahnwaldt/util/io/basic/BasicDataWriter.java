@@ -19,7 +19,7 @@ implements DataWriter
     register(new BasicListHandler());
     register(new BasicMapHandler());
   }
-  
+
   @Override
   protected void inject(DataHandler handler) {
     handler.setWriter(this);
@@ -29,7 +29,7 @@ implements DataWriter
     handler.setWriter(this);
     types.add(handler);
   }
-  
+
   @Override
   public void init()
   throws IOException {
@@ -42,7 +42,7 @@ implements DataWriter
       handlers.string.writeString(handler.getClass().getName());
     }
   }
-  
+
   @Override
   public void writeItem(Object item)
   throws IOException {
@@ -67,5 +67,5 @@ implements DataWriter
       }
     }
   }
-  
+
 }

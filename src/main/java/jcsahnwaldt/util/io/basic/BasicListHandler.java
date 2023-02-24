@@ -9,7 +9,7 @@ import jcsahnwaldt.util.io.ItemHandler;
 public class BasicListHandler
 extends AbstractBasicHandler
 implements ItemHandler
-{  
+{
   @Override
   public void writeItem(Object item)
   throws IOException {
@@ -40,5 +40,5 @@ implements ItemHandler
   public Class<?> itemType() {
     return List.class;
   }
-  
+
 }

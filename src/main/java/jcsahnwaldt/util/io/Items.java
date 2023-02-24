@@ -8,7 +8,7 @@ extends IdHandler<I>
   public Object item(I id);
 
   public I id(Object item);
-  
+
   public boolean isNew(I id);
 
 }

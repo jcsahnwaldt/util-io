@@ -11,9 +11,9 @@ public abstract class AbstractBinaryHandler
 implements DataHandler
 {
   protected OutputStream out = null;
-  
+
   protected InputStream in = null;
-  
+
   @Override
   public void setWriter(DataWriter out)
   {

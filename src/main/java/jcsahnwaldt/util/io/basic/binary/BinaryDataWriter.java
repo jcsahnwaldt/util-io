@@ -9,7 +9,7 @@ public class BinaryDataWriter
 extends BasicDataWriter
 {
   /*package*/ final OutputStream out;
-  
+
   public BinaryDataWriter(OutputStream out, MapMode mode) {
     super(new BinaryHandlers(), mode);
     this.out = out;
@@ -18,5 +18,5 @@ extends BasicDataWriter
     register(new BinaryFloatHandler());
     register(new BinaryStringHandler());
   }
-  
+
 }

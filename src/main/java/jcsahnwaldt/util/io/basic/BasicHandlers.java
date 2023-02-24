@@ -12,7 +12,7 @@ public class BasicHandlers
   final StringHandler string;
   final IdDataHandler<?> typeId;
   final IdDataHandler<?> itemId;
-  
+
   protected BasicHandlers(
     TagHandler tag,
     IntHandler size,
@@ -24,9 +24,9 @@ public class BasicHandlers
     this.size = size;
     this.string = string;
     this.typeId = typeId;
-    this.itemId = itemId;    
+    this.itemId = itemId;
   }
-  
+
   public void inject(BasicDataStream stream) {
     stream.inject(tag);
     stream.inject(size);

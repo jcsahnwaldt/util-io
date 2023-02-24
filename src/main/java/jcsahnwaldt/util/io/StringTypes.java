@@ -9,7 +9,7 @@ extends DelegatingIdHandler<String>
 implements Types<String, H>
 {
   private final Map<String,H> map = new LinkedHashMap<String,H>();
-  
+
   public StringTypes(IdHandler<String> handler) {
     super(handler);
   }
@@ -18,7 +18,7 @@ implements Types<String, H>
   public int count() {
     return map.size();
   }
-  
+
   @Override
   public void add(H handler) {
     Class<?> type = handler.itemType();

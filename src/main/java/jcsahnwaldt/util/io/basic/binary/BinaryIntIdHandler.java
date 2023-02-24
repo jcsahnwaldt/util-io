@@ -8,7 +8,7 @@ extends AbstractBinaryIdHandler
 {
   // item ids can't be negative, so we can use any negative marker value for the top byte
   private static final int NEW_BYTE = 0xFF;
-  
+
   @Override
   public void writeId(Integer id)
   throws IOException {
@@ -23,7 +23,7 @@ extends AbstractBinaryIdHandler
       out.write((i >>>  0) & 0xFF);
     }
   }
-  
+
   @Override
   public Integer readId()
   throws IOException {
@@ -49,5 +49,5 @@ extends AbstractBinaryIdHandler
     // Binary Int ID 1.2
     return 0xB11D0102;
   }
-  
+
 }

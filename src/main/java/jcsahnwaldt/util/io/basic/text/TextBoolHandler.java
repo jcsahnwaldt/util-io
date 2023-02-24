@@ -17,31 +17,31 @@ implements ItemHandler, BoolHandler, CompactHandler
     boolean value = ((Boolean)item).booleanValue();
     writeBool(value);
   }
-  
+
   @Override
   public Object readItem()
   throws IOException {
     boolean value = readBool();
     return Boolean.valueOf(value);
   }
-  
+
   @Override
   public boolean canHandle(Object item) {
     return item instanceof Boolean;
   }
-  
+
   @Override
   public Class<?> itemType() {
     return boolean.class;
   }
-  
+
   @Override
   public void writeBool(boolean item)
   throws IOException {
     out.write(item ? "true" : "false");
     out.write('\n');
   }
-  
+
   @Override
   public boolean readBool()
   throws IOException {

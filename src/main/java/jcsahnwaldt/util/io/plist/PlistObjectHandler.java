@@ -11,16 +11,16 @@ public class PlistObjectHandler
 extends PlistItemHandler
 {
   private final ItemHandler handler;
-  
+
   private final String type;
-  
+
   public PlistObjectHandler(ItemHandler handler, String type) {
     if (handler == null) throw new NullPointerException("handler");
     if (type == null) throw new NullPointerException("type");
     this.handler = handler;
     this.type = type;
   }
-  
+
   @Override
   public void setWriter(DataWriter out) {
     super.setWriter(out);
@@ -45,7 +45,7 @@ extends PlistItemHandler
     out.push();
     handler.writeItem(item);
     List<?> children = out.pop();
-    
+
     out.dict(true);
     out.refClass(this);
     int n = children.size();
@@ -66,10 +66,10 @@ extends PlistItemHandler
   public boolean canHandle(Object item) {
     return handler.canHandle(item);
   }
-  
+
   @Override
   public Class<?> itemType() {
     return handler.itemType();
   }
-  
+
 }

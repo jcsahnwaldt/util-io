@@ -6,7 +6,7 @@ import java.util.Map;
 
 public class PlistMapHandler
 extends PlistItemHandler
-{  
+{
   @Override
   public void init()
   throws IOException {
@@ -36,10 +36,10 @@ extends PlistItemHandler
   public boolean canHandle(Object item) {
     return item instanceof Map;
   }
-  
+
   @Override
   public Class<?> itemType() {
     return Map.class;
   }
-  
+
 }

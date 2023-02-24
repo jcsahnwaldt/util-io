@@ -17,7 +17,7 @@ implements DataReader
     // use MapMode.NONE - we retrieve items by id, not ids by item
     super(handlers, MapMode.NONE);
   }
-  
+
   @Override
   protected void inject(DataHandler handler) {
     handler.setReader(this);
@@ -27,7 +27,7 @@ implements DataReader
     handler.setReader(this);
     types.add(handler);
   }
-  
+
   @Override
   public void init()
   throws IOException {

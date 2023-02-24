@@ -9,7 +9,7 @@ implements DataHandler
 {
   protected BasicDataWriter out;
   protected BasicDataReader in;
-  
+
   @Override
   public void setWriter(DataWriter out) {
     this.out = (BasicDataWriter) out;

@@ -10,7 +10,7 @@ extends AbstractTextTagHandler
 implements IdDataHandler<Integer>
 {
   private final boolean requireId;
-  
+
   public TextIntIdHandler(boolean requireId) {
     this.requireId = requireId;
   }
@@ -22,14 +22,14 @@ implements IdDataHandler<Integer>
     else if (requireId) throw new IllegalArgumentException("null/empty id not allowed");
     out.write('\n');
   }
-  
+
   @Override
   public Integer readId()
   throws IOException {
     String id = in.readLine();
     if (id == null) throw new EOFException();
     else if (! id.isEmpty()) return Integer.valueOf(id);
-    else if (requireId) throw new IllegalArgumentException("null/empty id not allowed"); 
+    else if (requireId) throw new IllegalArgumentException("null/empty id not allowed");
     else return null;
   }
 
@@ -47,5 +47,5 @@ implements IdDataHandler<Integer>
   protected String tag(String prefix) {
     return prefix + (requireId ? "IntID/1.2;required" : "IntID/1.2;optional");
   }
-  
+
 }

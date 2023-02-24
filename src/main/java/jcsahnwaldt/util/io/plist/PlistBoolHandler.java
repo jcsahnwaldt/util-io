@@ -33,15 +33,15 @@ implements BoolHandler
   throws IOException {
     throw new UnsupportedOperationException();
   }
-  
+
   @Override
   public boolean canHandle(Object item) {
     return item instanceof Boolean;
   }
-  
+
   @Override
   public Class<?> itemType() {
     return boolean.class;
   }
-  
+
 }

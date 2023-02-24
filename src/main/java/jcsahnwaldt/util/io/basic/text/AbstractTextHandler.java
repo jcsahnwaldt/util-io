@@ -11,9 +11,9 @@ public abstract class AbstractTextHandler
 implements DataHandler
 {
   protected Writer out = null;
-  
+
   protected BufferedReader in = null;
-  
+
   @Override
   public void setWriter(DataWriter out) {
     this.out = ((TextDataWriter)out).out;
@@ -23,5 +23,5 @@ implements DataHandler
   public void setReader(DataReader in) {
     this.in = ((TextDataReader)in).in;
   }
-  
+
 }

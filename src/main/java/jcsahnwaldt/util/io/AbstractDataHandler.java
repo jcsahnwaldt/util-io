@@ -5,7 +5,7 @@ implements DataHandler
 {
   protected DataWriter out = null;
   protected DataReader in = null;
-  
+
   @Override
   public void setWriter(DataWriter out) {
     this.out = out;

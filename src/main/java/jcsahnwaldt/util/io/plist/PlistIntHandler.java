@@ -27,7 +27,7 @@ implements IntHandler
   throws IOException {
     out.val(val);
   }
-  
+
   @Override
   public int readInt()
   throws IOException {
@@ -38,10 +38,10 @@ implements IntHandler
   public boolean canHandle(Object item) {
     return item instanceof Integer;
   }
-  
+
   @Override
   public Class<?> itemType() {
     return int.class;
   }
-  
+
 }

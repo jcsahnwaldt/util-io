@@ -24,5 +24,5 @@ implements IdHandler<I>
     if (handler == null) throw new UnsupportedOperationException();
     return handler.readId();
   }
-  
+
 }

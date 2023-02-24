@@ -17,31 +17,31 @@ implements ItemHandler, IntHandler, CompactHandler
     int value = ((Integer)item).intValue();
     writeInt(value);
   }
-  
+
   @Override
   public Object readItem()
   throws IOException {
     int value = readInt();
     return Integer.valueOf(value);
   }
-  
+
   @Override
   public boolean canHandle(Object item) {
     return item instanceof Integer;
   }
-  
+
   @Override
   public Class<?> itemType() {
     return int.class;
   }
-  
+
   @Override
   public void writeInt(int item)
   throws IOException {
     out.write(Integer.toString(item));
     out.write('\n');
   }
-  
+
   @Override
   public int readInt()
   throws IOException {

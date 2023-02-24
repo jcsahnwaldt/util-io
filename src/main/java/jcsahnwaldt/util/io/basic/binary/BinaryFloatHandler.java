@@ -17,24 +17,24 @@ implements ItemHandler, FloatHandler, CompactHandler
     float value = ((Float)item).floatValue();
     writeFloat(value);
   }
-  
+
   @Override
   public Object readItem()
   throws IOException {
     float value = readFloat();
     return Float.valueOf(value);
   }
-  
+
   @Override
   public boolean canHandle(Object item) {
     return item instanceof Float;
   }
-  
+
   @Override
   public Class<?> itemType() {
     return float.class;
   }
-  
+
   @Override
   public void writeFloat(float item)
   throws IOException {
@@ -44,7 +44,7 @@ implements ItemHandler, FloatHandler, CompactHandler
     out.write((bits >>>  8) & 0xFF);
     out.write((bits >>>  0) & 0xFF);
   }
-  
+
   @Override
   public float readFloat()
   throws IOException {

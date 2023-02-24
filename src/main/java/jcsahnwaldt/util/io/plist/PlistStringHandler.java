@@ -13,7 +13,7 @@ implements StringHandler
   throws IOException {
     writeString((String)item);
   }
-  
+
   @Override
   public Object readItem()
   throws IOException {
@@ -25,7 +25,7 @@ implements StringHandler
   throws IOException {
     out.val(val);
   }
-  
+
   @Override
   public String readString() {
     throw new UnsupportedOperationException();
@@ -35,10 +35,10 @@ implements StringHandler
   public boolean canHandle(Object item) {
     return item instanceof String;
   }
-  
+
   @Override
   public Class<?> itemType() {
     return String.class;
   }
-  
+
 }

@@ -27,7 +27,7 @@ implements FloatHandler
   throws IOException {
     out.val(val);
   }
-  
+
   @Override
   public float readFloat()
   throws IOException {
@@ -38,10 +38,10 @@ implements FloatHandler
   public boolean canHandle(Object item) {
     return item instanceof Float;
   }
-  
+
   @Override
   public Class<?> itemType() {
     return float.class;
   }
-  
+
 }
