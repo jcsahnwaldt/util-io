@@ -5,9 +5,12 @@ plugins {
 group = 'jcsahnwaldt'
 version = '1.6'
 
-tasks.withType(JavaCompile) {
+java {
     sourceCompatibility = 8
     targetCompatibility = 8
+}
+
+compileJava {
     options.encoding = 'UTF-8'
     options.compilerArgs = ['-Xlint:all']
 }
