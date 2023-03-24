@@ -7,16 +7,16 @@ import jcsahnwaldt.util.io.DataWriter;
 public abstract class AbstractBasicHandler
 implements DataHandler
 {
-  protected BasicDataWriter out;
-  protected BasicDataReader in;
+  protected BasicDataWriter output;
+  protected BasicDataReader input;
 
   @Override
-  public void setWriter(DataWriter out) {
-    this.out = (BasicDataWriter) out;
+  public void setWriter(DataWriter output) {
+    this.output = (BasicDataWriter) output;
   }
 
   @Override
-  public void setReader(DataReader in) {
-    this.in = (BasicDataReader) in;
+  public void setReader(DataReader input) {
+    this.input = (BasicDataReader) input;
   }
 }

@@ -38,13 +38,13 @@ implements ItemHandler, BoolHandler, CompactHandler
   @Override
   public void writeBool(boolean item)
   throws IOException {
-    out.write(item ? 1 : 0);
+    output.write(item ? 1 : 0);
   }
 
   @Override
   public boolean readBool()
   throws IOException {
-    int b = in.read();
+    int b = input.read();
     if (b == -1) throw new EOFException();
     return b != 0;
   }

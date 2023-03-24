@@ -13,15 +13,15 @@ implements TagHandler
   private final TextStringHandler stringHandler = new TextStringHandler();
 
   @Override
-  public void setWriter(DataWriter out) {
-    super.setWriter(out);
-    stringHandler.setWriter(out);
+  public void setWriter(DataWriter output) {
+    super.setWriter(output);
+    stringHandler.setWriter(output);
   }
 
   @Override
-  public void setReader(DataReader in) {
-    super.setReader(in);
-    stringHandler.setReader(in);
+  public void setReader(DataReader input) {
+    super.setReader(input);
+    stringHandler.setReader(input);
   }
 
   protected abstract String tag(String prefix);

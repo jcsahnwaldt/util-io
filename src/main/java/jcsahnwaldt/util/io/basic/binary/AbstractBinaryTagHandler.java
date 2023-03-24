@@ -13,15 +13,15 @@ implements TagHandler
   private final BinaryIntHandler intHandler = new BinaryIntHandler();
 
   @Override
-  public void setWriter(DataWriter out) {
-    super.setWriter(out);
-    intHandler.setWriter(out);
+  public void setWriter(DataWriter output) {
+    super.setWriter(output);
+    intHandler.setWriter(output);
   }
 
   @Override
-  public void setReader(DataReader in) {
-    super.setReader(in);
-    intHandler.setReader(in);
+  public void setReader(DataReader input) {
+    super.setReader(input);
+    intHandler.setReader(input);
   }
 
   protected abstract int tag();

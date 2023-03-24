@@ -36,14 +36,14 @@ implements ItemHandler, StringHandler
   public void writeString(String item)
   throws IOException {
     // FIXME: escape line breaks
-    out.write(item);
-    out.write('\n');
+    output.write(item);
+    output.write('\n');
   }
 
   @Override
   public String readString()
   throws IOException {
-    String item = in.readLine();
+    String item = input.readLine();
     if (item == null) throw new EOFException();
     // FIXME: unescape line breaks
     return item;

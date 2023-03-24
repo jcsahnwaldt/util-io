@@ -11,13 +11,13 @@ extends AbstractBinaryIdHandler
   throws IOException {
     int i = id.intValue();
     if (i < 0 || i > 255) throw new IllegalArgumentException("type id must be 0..255");
-    out.write(i);
+    output.write(i);
   }
 
   @Override
   public Integer readId()
   throws IOException {
-    int i = in.read();
+    int i = input.read();
     if (i == -1) throw new EOFException();
     return Integer.valueOf(i);
   }

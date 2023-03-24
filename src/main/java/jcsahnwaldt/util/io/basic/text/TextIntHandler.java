@@ -38,14 +38,14 @@ implements ItemHandler, IntHandler, CompactHandler
   @Override
   public void writeInt(int item)
   throws IOException {
-    out.write(Integer.toString(item));
-    out.write('\n');
+    output.write(Integer.toString(item));
+    output.write('\n');
   }
 
   @Override
   public int readInt()
   throws IOException {
-    String item = in.readLine();
+    String item = input.readLine();
     if (item == null) throw new EOFException();
     return Integer.parseInt(item);
   }

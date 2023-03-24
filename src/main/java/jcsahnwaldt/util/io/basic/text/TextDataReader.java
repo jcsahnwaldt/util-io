@@ -8,18 +8,18 @@ import jcsahnwaldt.util.io.basic.BasicDataReader;
 public class TextDataReader
 extends BasicDataReader
 {
-  public static TextDataReader intIds(Reader in) {
-    return new TextDataReader(in, TextHandlers.intIds());
+  public static TextDataReader intIds(Reader input) {
+    return new TextDataReader(input, TextHandlers.intIds());
   }
 
-  public static TextDataReader stringIds(Reader in) {
-    return new TextDataReader(in, TextHandlers.stringIds());
+  public static TextDataReader stringIds(Reader input) {
+    return new TextDataReader(input, TextHandlers.stringIds());
   }
 
-  /*package*/ final BufferedReader in;
+  /*package*/ final BufferedReader input;
 
-  public TextDataReader(Reader in, TextHandlers handlers) {
+  public TextDataReader(Reader input, TextHandlers handlers) {
     super(handlers);
-    this.in = in instanceof BufferedReader ? (BufferedReader)in : new BufferedReader(in);
+    this.input = input instanceof BufferedReader ? (BufferedReader) input : new BufferedReader(input);
   }
 }

@@ -10,20 +10,20 @@ extends PlistItemHandler
   @Override
   public void init()
   throws IOException {
-    out.defClass(this, "NSDictionary");
+    output.defClass(this, "NSDictionary");
   }
 
   @Override
   public void writeItem(Object item)
   throws IOException {
     Map<?,?> map = (Map<?, ?>) item;
-    List<?> keys = out.writeItems(map.keySet());
-    List<?> vals = out.writeItems(map.values());
-    out.dict(true);
-    out.refClass(this);
-    out.writeRefs("NS.keys", keys);
-    out.writeRefs("NS.objects", vals);
-    out.dict(false);
+    List<?> keys = output.writeItems(map.keySet());
+    List<?> vals = output.writeItems(map.values());
+    output.dict(true);
+    output.refClass(this);
+    output.writeRefs("NS.keys", keys);
+    output.writeRefs("NS.objects", vals);
+    output.dict(false);
   }
 
   @Override

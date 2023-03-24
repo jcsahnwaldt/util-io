@@ -10,18 +10,17 @@ import jcsahnwaldt.util.io.DataWriter;
 public abstract class AbstractTextHandler
 implements DataHandler
 {
-  protected Writer out = null;
-
-  protected BufferedReader in = null;
+  protected Writer output = null;
+  protected BufferedReader input = null;
 
   @Override
-  public void setWriter(DataWriter out) {
-    this.out = ((TextDataWriter)out).out;
+  public void setWriter(DataWriter output) {
+    this.output = ((TextDataWriter) output).output;
   }
 
   @Override
-  public void setReader(DataReader in) {
-    this.in = ((TextDataReader)in).in;
+  public void setReader(DataReader input) {
+    this.input = ((TextDataReader) input).input;
   }
 
 }

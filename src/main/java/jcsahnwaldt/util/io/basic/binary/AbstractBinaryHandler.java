@@ -10,20 +10,19 @@ import jcsahnwaldt.util.io.DataWriter;
 public abstract class AbstractBinaryHandler
 implements DataHandler
 {
-  protected OutputStream out = null;
-
-  protected InputStream in = null;
+  protected OutputStream output = null;
+  protected InputStream input = null;
 
   @Override
-  public void setWriter(DataWriter out)
+  public void setWriter(DataWriter output)
   {
-    this.out = ((BinaryDataWriter)out).out;
+    this.output = ((BinaryDataWriter)output).output;
   }
 
   @Override
-  public void setReader(DataReader in)
+  public void setReader(DataReader input)
   {
-    this.in = ((BinaryDataReader)in).in;
+    this.input = ((BinaryDataReader)input).input;
   }
 
 }

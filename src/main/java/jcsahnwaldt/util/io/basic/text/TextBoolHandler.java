@@ -38,14 +38,14 @@ implements ItemHandler, BoolHandler, CompactHandler
   @Override
   public void writeBool(boolean item)
   throws IOException {
-    out.write(item ? "true" : "false");
-    out.write('\n');
+    output.write(item ? "true" : "false");
+    output.write('\n');
   }
 
   @Override
   public boolean readBool()
   throws IOException {
-    String item = in.readLine();
+    String item = input.readLine();
     if (item == null) throw new EOFException();
     if (item.equals("true")) return true;
     if (item.equals("false")) return false;

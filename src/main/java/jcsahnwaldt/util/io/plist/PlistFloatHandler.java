@@ -25,7 +25,7 @@ implements FloatHandler
   @Override
   public void writeFloat(float val)
   throws IOException {
-    out.val(val);
+    output.val(val);
   }
 
   @Override

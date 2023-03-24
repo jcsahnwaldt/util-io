@@ -9,15 +9,15 @@ import jcsahnwaldt.util.io.ItemHandler;
 public abstract class PlistItemHandler
 implements ItemHandler
 {
-  protected PlistDataWriter out = null;
+  protected PlistDataWriter output = null;
 
   @Override
-  public void setWriter(DataWriter out) {
-    this.out = (PlistDataWriter)out;
+  public void setWriter(DataWriter output) {
+    this.output = (PlistDataWriter) output;
   }
 
   @Override
-  public void setReader(DataReader in) {
+  public void setReader(DataReader input) {
     throw new UnsupportedOperationException();
   }
 

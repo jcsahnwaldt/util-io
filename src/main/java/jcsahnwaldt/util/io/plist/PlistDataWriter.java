@@ -19,7 +19,7 @@ implements DataWriter
   // "\n" for nicer output, "" for saving ~7% space
   private static final String LF = "\n";
 
-  /*package*/ final Writer out;
+  /*package*/ final Writer output;
 
   private final IntItems items;
   private final IntTypes<PlistItemHandler> types;
@@ -29,9 +29,9 @@ implements DataWriter
    */
   private final Deque<List<Object>> stack = new ArrayDeque<List<Object>>();
 
-  public PlistDataWriter(Writer out, MapMode mode) {
-    if (out == null) throw new NullPointerException("out");
-    this.out = out;
+  public PlistDataWriter(Writer output, MapMode mode) {
+    if (output == null) throw new NullPointerException("out");
+    this.output = output;
 
     items = new IntItems(null, mode);
     types = new IntTypes<PlistItemHandler>(null);
@@ -52,7 +52,7 @@ implements DataWriter
 
   private void w(String string)
   throws IOException {
-    out.write(string);
+    output.write(string);
   }
 
   private boolean safe(String string) {
@@ -66,12 +66,12 @@ implements DataWriter
   private void esc(String string)
   throws IOException {
     if (! safe(string)) {
-      out.write("<![CDATA[");
-      out.write(string);
-      out.write("]]>");
+      output.write("<![CDATA[");
+      output.write(string);
+      output.write("]]>");
     }
     else {
-      out.write(string);
+      output.write(string);
     }
   }
 

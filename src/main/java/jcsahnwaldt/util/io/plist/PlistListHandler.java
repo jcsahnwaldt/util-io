@@ -9,18 +9,18 @@ extends PlistItemHandler
   @Override
   public void init()
   throws IOException {
-    out.defClass(this, "NSArray");
+    output.defClass(this, "NSArray");
   }
 
   @Override
   public void writeItem(Object item)
   throws IOException {
     List<?> list = (List<?>) item;
-    List<?> children = out.writeItems(list);
-    out.dict(true);
-    out.refClass(this);
-    out.writeRefs("NS.objects", children);
-    out.dict(false);
+    List<?> children = output.writeItems(list);
+    output.dict(true);
+    output.refClass(this);
+    output.writeRefs("NS.objects", children);
+    output.dict(false);
   }
 
   @Override

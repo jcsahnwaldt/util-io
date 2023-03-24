@@ -8,11 +8,11 @@ import jcsahnwaldt.util.io.basic.BasicDataWriter;
 public class BinaryDataWriter
 extends BasicDataWriter
 {
-  /*package*/ final OutputStream out;
+  /*package*/ final OutputStream output;
 
   public BinaryDataWriter(OutputStream out, MapMode mode) {
     super(new BinaryHandlers(), mode);
-    this.out = out;
+    this.output = out;
     register(new BinaryBoolHandler());
     register(new BinaryIntHandler());
     register(new BinaryFloatHandler());

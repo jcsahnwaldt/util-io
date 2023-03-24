@@ -25,7 +25,7 @@ implements IntHandler
   @Override
   public void writeInt(int val)
   throws IOException {
-    out.val(val);
+    output.val(val);
   }
 
   @Override

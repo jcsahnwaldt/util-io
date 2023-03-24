@@ -22,38 +22,38 @@ extends PlistItemHandler
   }
 
   @Override
-  public void setWriter(DataWriter out) {
-    super.setWriter(out);
-    handler.setWriter(out);
+  public void setWriter(DataWriter output) {
+    super.setWriter(output);
+    handler.setWriter(output);
   }
 
   @Override
-  public void setReader(DataReader in) {
-    super.setReader(in);
-    handler.setReader(in);
+  public void setReader(DataReader input) {
+    super.setReader(input);
+    handler.setReader(input);
   }
 
   @Override
   public void init()
   throws IOException {
-    out.defClass(this, type);
+    output.defClass(this, type);
   }
 
   @Override
   public void writeItem(Object item)
   throws IOException {
-    out.push();
+    output.push();
     handler.writeItem(item);
-    List<?> children = out.pop();
+    List<?> children = output.pop();
 
-    out.dict(true);
-    out.refClass(this);
+    output.dict(true);
+    output.refClass(this);
     int n = children.size();
     // write children in reverse order - Swift code calls super.init() last
     for (int i = 0; i < n; i++) {
-      out.ref("$"+i, children.get(n - i - 1));
+      output.ref("$"+i, children.get(n - i - 1));
     }
-    out.dict(false);
+    output.dict(false);
   }
 
   @Override

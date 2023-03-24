@@ -38,19 +38,19 @@ implements ItemHandler, IntHandler, CompactHandler
   @Override
   public void writeInt(int item)
   throws IOException {
-    out.write((item >>> 24) & 0xFF);
-    out.write((item >>> 16) & 0xFF);
-    out.write((item >>>  8) & 0xFF);
-    out.write((item >>>  0) & 0xFF);
+    output.write((item >>> 24) & 0xFF);
+    output.write((item >>> 16) & 0xFF);
+    output.write((item >>>  8) & 0xFF);
+    output.write((item >>>  0) & 0xFF);
   }
 
   @Override
   public int readInt()
   throws IOException {
-    int b1 = in.read();
-    int b2 = in.read();
-    int b3 = in.read();
-    int b4 = in.read();
+    int b1 = input.read();
+    int b2 = input.read();
+    int b3 = input.read();
+    int b4 = input.read();
     if ((b1 | b2 | b3 | b4) == -1) throw new EOFException();
     int item = ((b1 << 24) | (b2 << 16) | (b3 << 8) | (b4 << 0));
     return item;

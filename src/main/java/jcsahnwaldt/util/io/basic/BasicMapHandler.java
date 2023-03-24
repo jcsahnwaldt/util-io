@@ -15,20 +15,20 @@ implements ItemHandler
   public void writeItem(Object item)
   throws IOException {
     Map<?,?> map = (Map<?, ?>) item;
-    out.handlers.size.writeInt(map.size());
+    output.handlers.size.writeInt(map.size());
     for (Entry<?,?> entry: map.entrySet()) {
-      out.writeItem(entry.getKey());
-      out.writeItem(entry.getValue());
+      output.writeItem(entry.getKey());
+      output.writeItem(entry.getValue());
     }
   }
 
   @Override
   public Object readItem()
   throws IOException {
-    int count = in.handlers.size.readInt();
+    int count = input.handlers.size.readInt();
     Map<Object, Object> map = new LinkedHashMap<Object, Object>(count*4/3); // load factor is 0.75
     while (count-- > 0) {
-      map.put(in.readItem(), in.readItem());
+      map.put(input.readItem(), input.readItem());
     }
     return map;
   }

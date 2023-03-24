@@ -9,7 +9,7 @@ extends PlistItemHandler
   public void writeItem(Object item)
   throws IOException {
     if (item != null) throw new IllegalArgumentException(item.getClass().getName());
-    out.val("$null");
+    output.val("$null");
   }
 
   @Override

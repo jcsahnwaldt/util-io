@@ -14,19 +14,19 @@ implements ItemHandler
   public void writeItem(Object item)
   throws IOException {
     List<?> list = (List<?>) item;
-    out.handlers.size.writeInt(list.size());
+    output.handlers.size.writeInt(list.size());
     for (Object child: list) {
-      out.writeItem(child);
+      output.writeItem(child);
     }
   }
 
   @Override
   public Object readItem()
   throws IOException {
-    int count = in.handlers.size.readInt();
+    int count = input.handlers.size.readInt();
     List<Object> list = new ArrayList<Object>(count);
     while (count-- > 0) {
-      list.add(in.readItem());
+      list.add(input.readItem());
     }
     return list;
   }

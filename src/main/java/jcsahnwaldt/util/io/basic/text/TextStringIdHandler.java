@@ -18,15 +18,15 @@ implements IdDataHandler<String>
   @Override
   public void writeId(String itemId)
   throws IOException {
-    if (itemId != null) out.write(itemId);
+    if (itemId != null) output.write(itemId);
     else if (requireId) throw new IllegalArgumentException("null/empty id not allowed");
-    out.write('\n');
+    output.write('\n');
   }
 
   @Override
   public String readId()
   throws IOException {
-    String itemId = in.readLine();
+    String itemId = input.readLine();
     if (itemId == null) throw new EOFException();
     else if (! itemId.isEmpty()) return itemId;
     else if (requireId) throw new IllegalArgumentException("null/empty id not allowed");

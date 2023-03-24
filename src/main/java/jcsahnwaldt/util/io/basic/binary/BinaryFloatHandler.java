@@ -39,19 +39,19 @@ implements ItemHandler, FloatHandler, CompactHandler
   public void writeFloat(float item)
   throws IOException {
     int bits = Float.floatToIntBits(item);
-    out.write((bits >>> 24) & 0xFF);
-    out.write((bits >>> 16) & 0xFF);
-    out.write((bits >>>  8) & 0xFF);
-    out.write((bits >>>  0) & 0xFF);
+    output.write((bits >>> 24) & 0xFF);
+    output.write((bits >>> 16) & 0xFF);
+    output.write((bits >>>  8) & 0xFF);
+    output.write((bits >>>  0) & 0xFF);
   }
 
   @Override
   public float readFloat()
   throws IOException {
-    int b1 = in.read();
-    int b2 = in.read();
-    int b3 = in.read();
-    int b4 = in.read();
+    int b1 = input.read();
+    int b2 = input.read();
+    int b3 = input.read();
+    int b4 = input.read();
     if ((b1 | b2 | b3 | b4) == -1) throw new EOFException();
     int bits = ((b1 << 24) | (b2 << 16) | (b3 << 8) | (b4 << 0));
     return Float.intBitsToFloat(bits);

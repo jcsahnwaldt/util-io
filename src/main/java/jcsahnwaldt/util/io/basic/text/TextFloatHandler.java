@@ -38,14 +38,14 @@ implements ItemHandler, FloatHandler, CompactHandler
   @Override
   public void writeFloat(float item)
   throws IOException {
-    out.write(Float.toString(item));
-    out.write('\n');
+    output.write(Float.toString(item));
+    output.write('\n');
   }
 
   @Override
   public float readFloat()
   throws IOException {
-    String item = in.readLine();
+    String item = input.readLine();
     if (item == null) throw new EOFException();
     return Float.parseFloat(item);
   }

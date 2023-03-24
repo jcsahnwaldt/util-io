@@ -23,7 +23,7 @@ implements StringHandler
   @Override
   public void writeString(String val)
   throws IOException {
-    out.val(val);
+    output.val(val);
   }
 
   @Override

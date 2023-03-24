@@ -25,7 +25,7 @@ implements BoolHandler
   @Override
   public void writeBool(boolean val)
   throws IOException {
-    out.val(val);
+    output.val(val);
   }
 
   @Override

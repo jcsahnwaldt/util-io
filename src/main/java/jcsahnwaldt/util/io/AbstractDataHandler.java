@@ -3,16 +3,16 @@ package jcsahnwaldt.util.io;
 public abstract class AbstractDataHandler
 implements DataHandler
 {
-  protected DataWriter out = null;
-  protected DataReader in = null;
+  protected DataWriter output = null;
+  protected DataReader input = null;
 
   @Override
-  public void setWriter(DataWriter out) {
-    this.out = out;
+  public void setWriter(DataWriter output) {
+    this.output = output;
   }
 
   @Override
-  public void setReader(DataReader in) {
-    this.in = in;
+  public void setReader(DataReader input) {
+    this.input = input;
   }
 }
