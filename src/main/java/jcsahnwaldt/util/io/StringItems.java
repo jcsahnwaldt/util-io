@@ -32,7 +32,8 @@ implements Items<String>
 
     id = typeName + id;
 
-    if (objects.put(id, item) != null) throw new IllegalArgumentException("duplicate id ["+id+"]");
+    Object old = objects.put(id, item);
+    if (old != null) throw new IllegalArgumentException("duplicate id ["+id+"]\nold: "+old+"\nnew:"+item);
     if (ids != null) ids.put(item, id);
   }
 
