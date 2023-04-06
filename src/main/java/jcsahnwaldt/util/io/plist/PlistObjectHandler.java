@@ -49,9 +49,8 @@ extends PlistItemHandler
     output.dict(true);
     output.refClass(this);
     int n = children.size();
-    // write children in reverse order - Swift code calls super.init() last
     for (int i = 0; i < n; i++) {
-      output.ref("$"+i, children.get(n - i - 1));
+      output.ref("$"+i, children.get(i));
     }
     output.dict(false);
   }
